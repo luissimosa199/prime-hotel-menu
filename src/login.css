@@ -1,0 +1,102 @@
+/* loggin area */
+
+.loggin_area {
+    margin: auto;
+    position: relative;
+    width: 60vw;
+    height: calc(var(--cont-long) + 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    --cont-long: 280px;
+  }
+  
+  .loggin_area > * {
+    border-radius: 50%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .loggin_photo_container {
+    width: var(--cont-long);
+    height: var(--cont-long);
+    position: absolute;
+    left: 0px;
+    border: 10px solid var(--sec-color);
+    z-index: 1;
+  }
+  
+  .loggin_form_container {
+    border: 10px solid var(--sec-color);
+    width: var(--cont-long);
+    height: var(--cont-long);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    background-color: hsla(0, 0%, 100%, 0.65);
+    z-index: 2;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  
+  form button {
+    width: 50%;
+    background-color: var(--sec-color);
+    color: var(--third-color);
+    border-radius: 1vh;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+  }
+  
+  form button:hover {
+    opacity: 0.9;
+    background-color: var(--bg-color);
+  }
+  
+  input {
+    border: 2px solid var(--sec-color);
+    border-radius: 1vh;
+    padding: 0.5rem;
+  }
+  
+  /*  */
+  
+  @media (max-width: 552px) {
+    .loggin_photo_container,
+    .loggin_form_container {
+      position: absolute;
+      right: auto;
+      left: auto;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .loggin_photo_container,
+    .loggin_form_container {
+      width: calc(var(--cont-long) + 10vw);
+      height: calc(var(--cont-long) + 10vw);
+    }
+  }
+
+  /* */
+
+  .loggin_photo_container {
+    overflow: hidden;
+  }
+
+  .loggin_photo_img {
+    position: relative;
+    left: -50%;
+    top: -200px;
+  }
