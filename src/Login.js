@@ -1,6 +1,7 @@
 import './login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import img from "./imgs/2.jpg"
 
 const Login = ({email, setEmail, password, setPassword, setLoadingModalVisibility, setRenderMessage}) => {
 
@@ -34,7 +35,7 @@ const Login = ({email, setEmail, password, setPassword, setLoadingModalVisibilit
         <div className='loggin_area'>
 
           <div className='loggin_photo_container'>
-            <img className="loggin_photo_img" src="./imgs/2.jpg" alt="foto de platos variados" />
+            <img className="loggin_photo_img" src={img} alt="foto de platos variados" />
           </div>
 
           <div className='loggin_form_container'>

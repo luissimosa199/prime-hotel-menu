@@ -7,6 +7,7 @@ import Home from "./Home";
 import Modal from "./Modal";
 import PrivateRoute from "./PrivateRoute";
 import LoadingModal from "./LoadingModal";
+import Comp404 from "./Comp404";
 
 function App() {
   //
@@ -237,6 +238,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route
+              path="*"
+              element={<Comp404 />}
+            />
+
+            <Route
               path='/login'
               element={
                 <Login
@@ -250,6 +256,7 @@ function App() {
               }
             />
             <Route
+              exact
               path='/'
               element={
                 <PrivateRoute>

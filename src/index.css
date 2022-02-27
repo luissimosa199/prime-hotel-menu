@@ -152,3 +152,8 @@ footer p {
     width: 380px;
   }
 }
+
+.error_404 {
+  margin: auto;
+  text-align: left;
+}
