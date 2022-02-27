@@ -31,6 +31,6 @@ La Spoonacular API es una herramienta que para hacer búsquedas necesita palabra
 
 Puedes disfrutar de una version live en:
 
-https://musing-ride-8cdf20.netlify.app/
+https://happy-wozniak-d95c72.netlify.app/
 
 (no hace request a la API de alkemy)
