@@ -16,22 +16,19 @@ const Login = ({email, setEmail, password, setPassword, setLoadingModalVisibilit
 
     if (email.length === 0 || password.length === 0) {
       setRenderMessage(<div><p>Introduce usuario y contraseña para continuar</p><button className="modal_acept_btn" type="button" onClick={() => {setLoadingModalVisibility(false)}}>Aceptar</button></div>)
-    } else if (email === "challenge@alkemy.org" && password === "react"){
-
-      const token = "TOKEN";
-      localStorage.setItem("token", token);
-      navigate("/")
-      setLoadingModalVisibility(false)
+    } else {
+      axios
+        .post("http://challenge-react.alkemy.org/", { email, password })
+        .then((res) => {
+          const token = res.data.token;
+          localStorage.setItem("token", token);
+          navigate("/")
+          setLoadingModalVisibility(false)
+        }).catch(err => setRenderMessage(<div><p>Ha ocurrido un error, intenta de nuevo</p><button className="modal_acept_btn" type="button" onClick={() => {setLoadingModalVisibility(false)}}>Aceptar</button></div>))
 
       setEmail("");
       setPassword("");
-
-    } else if(email !== "challenge@alkemy.org" || password !== "react") {
-      setRenderMessage(<div><p>Ha ocurrido un error, intenta de nuevo</p><button className="modal_acept_btn" type="button" onClick={() => {setLoadingModalVisibility(false)}}>Aceptar</button></div>)
     }
-
-
-
   };
 
     return ( 
